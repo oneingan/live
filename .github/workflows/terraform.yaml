@@ -13,5 +13,7 @@ jobs:
           terraform_version: 1.3.7
           terraform_wrapper: false
       - run: |
+          cd integ/data-stores/mysql
           terraform init
           terraform apply -auto-approve
+          cd -
