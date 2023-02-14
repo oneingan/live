@@ -26,7 +26,7 @@ resource "aws_db_instance" "example" {
 }
 
 data "aws_secretsmanager_secret_version" "creds" {
-  secret-id = "integ/data-stores/mysql"
+  secret_id = "integ/data-stores/mysql"
 }
 
 locals {
