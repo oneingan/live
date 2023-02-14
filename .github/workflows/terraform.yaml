@@ -7,6 +7,10 @@ jobs:
   TerraformApply:
     runs-on: ubuntu-latest
     steps:
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::482685573138:role/github-actions-oidc-example20230214125148478300000001
+          aws-region: us-east-1
       - uses: actions/checkout@v3
       - uses: hashicorp/setup-terraform@v2
         with:
@@ -20,7 +24,3 @@ jobs:
           cd -
 permissions:
   id-token: write
-    - uses: aws-actions/configure-aws-credentials@v1
-      with:
-        role-to-assume: arn:aws:iam::482685573138:role/github-actions-oidc-example20230214125148478300000001
-        aws-region: us-east-1
