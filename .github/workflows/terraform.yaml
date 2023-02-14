@@ -18,3 +18,9 @@ jobs:
           terraform init
           terraform apply -auto-approve
           cd -
+permissions:
+  id-token: write
+    - uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: arn:aws:iam::482685573138:role/github-actions-oidc-example20230214125148478300000001
+        aws-region: us-east-1

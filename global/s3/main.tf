@@ -2,17 +2,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-terraform {
-  backend "s3" {
-    bucket = "terra-forma-juanjo-3001"
-    # 1:1 mapeo organizacion directorios
-    key = "global/s3/terraform.tfstate"
-    region = "us-east-1"
-    dynamodb_table = "terra-forma-juanjo-3001-locks"
-    encrypt = true
-  }
-}
-
 resource "aws_s3_bucket" "terraform_state" {
   bucket = "terra-forma-juanjo-3001"
 
